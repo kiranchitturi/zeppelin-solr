@@ -356,15 +356,15 @@ object SolrQuerySupport {
         stringBuilder.++=(s"\n")
       }
       doc.foreach(f => {
-//        stringBuilder.++=(s"${String.valueOf(f._1)}\t")
         f._2 match {
           case ul: java.util.Collection[_] => stringBuilder.++=(s"${StringUtils.join(ul, ",")}\t")
           case m: java.util.Map[_, _] => // ignore maps for now
           case a: AnyRef => stringBuilder.++=(s"${String.valueOf(a)}\t")
         }
-        stringBuilder.++=(s"\n")
       })
+      stringBuilder.++=(s"\n")
     }
+//    logger.info(s"output: ${stringBuilder.toString()}")
     if (streamingIterator.getNumDocs == 0) {
       interpreterResult.add(InterpreterResult.Type.HTML, s"<font color=red>Zero results for the query.</font>")
     } else {
