@@ -11,7 +11,7 @@
 
     <properties>
         <solr.version>6.3.0</solr.version>
-        <scala.version>2.10.5</scala.version>
+        <scala.version>2.13.1</scala.version>
         <scala.binary.version>2.10</scala.binary.version>
         <guava.version>15.0</guava.version>
         <zeppelin.version>0.7.2</zeppelin.version>
